@@ -1,0 +1,15 @@
+.action-bar {
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: 10;
+  width: 100%;
+  background: $color_main;
+  padding: ($space / 1.2) 0;
+  text-align: center;
+  height: $actionbar_height;
+}
+
+.action-bar-logo {
+  height: 100%;
+}

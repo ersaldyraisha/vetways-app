@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="initial-scale=1, maximum-scale=1, user-scalable=no, width=device-width">
+    <title></title>
+
+    <link rel="manifest" href="manifest.json">
+    <link href="css/main.css" rel="stylesheet">
+    <script src="js/vendor/modernizr.min.js"></script>
+
+  </head>
+  <body ng-app="vetways" ng-controller="mainController" ng-init="init()">
+    
+    <header class="action-bar">
+      <img class="action-bar-logo" src="img/logo.png">
+    </header>
+
+    <main>
+      <ui-view></ui-view>   
+    </main>
+
+    <nav class="bottom-nav">
+      <ul class="bottom-nav-list list-nostyle">
+        <li class="bottom-nav-item" ng-class="{'is-active': pageIndicator.home}">
+          <a class="bottom-nav-anchor" ui-sref="home" ng-click="changePage('home')">
+            <i class="fa fa-th fa-2x"></i>
+            <strong class="bottom-nav-title">Beranda</strong>
+          </a>
+        </li>
+        <li class="bottom-nav-item" ng-class="{'is-active': pageIndicator.notif}">
+          <a class="bottom-nav-anchor" ui-sref="notif" ng-click="changePage('notif')">
+            <i class="fa fa-bell fa-2x"></i>
+            <strong class="bottom-nav-title">Pemberitahuan</strong>
+          </a>
+        </li>
+        <li class="bottom-nav-item" ng-class="{'is-active': pageIndicator.article}">
+          <a class="bottom-nav-anchor" ui-sref="articles" ng-click="changePage('article')">
+            <i class="fa fa-newspaper-o fa-2x"></i>
+            <strong class="bottom-nav-title">Artikel</strong>
+          </a>
+        </li>
+        <li class="bottom-nav-item" ng-class="{'is-active': pageIndicator.profile}">
+          <a class="bottom-nav-anchor" ui-sref="profile" ng-click="changePage('profile')">
+            <i class="fa fa-user fa-2x"></i>
+            <strong class="bottom-nav-title">Profil</strong>
+          </a>
+        </li>
+      </ul>
+    </nav>
+
+    
+    
+    <script>window.myPrefix = '';</script>
+    
+    <script src="lib/ionic/js/ionic.bundle.js"></script>
+    <script src="cordova.js"></script>
+    <script src="js/main.min.js"></script>
+    <!-- un-comment this code to enable service worker
+    <script>
+      if ('serviceWorker' in navigator) {
+        navigator.serviceWorker.register('service-worker.js')
+          .then(() => console.log('service worker installed'))
+          .catch(err => console.log('Error', err));
+      }
+    </script>-->
+  </body>
+</html>
