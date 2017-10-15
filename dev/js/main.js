@@ -5,40 +5,87 @@
 // the 2nd parameter is an array of 'requires'
 angular.module('vetways', ['ionic'])
 
-.controller('mainController', ['$scope', ($scope) => {
-  $scope.pageIndicator = {}
 
-  $scope.changePage = (next) => {
-    $scope.pageIndicator = Object.assign({}, {
+.controller('mainController', ['$scope', '$rootScope', ($scope, $rootScope) => {
+  $rootScope.pageIndicator = {}
+  $rootScope.fragment = ''
+  $rootScope.isModalActive = false
+
+  $rootScope.changePage = (next) => {
+    $rootScope.pageIndicator = Object.assign({}, {
       home: false,
       article: false,
       notif: false,
       profile: false
     })
-    $scope.pageIndicator[next] = true
+    $rootScope.pageIndicator[next] = true
   }
 
+  $rootScope.scrollTop = () => {
+    document.querySelector('main').scrollTo(0,0)
+  }
+
+  $rootScope.toggleModal = (target) => {
+    $rootScope.isModalActive = !$rootScope.isModalActive
+    if ( $rootScope.isModalActive ) {
+      $rootScope.fragment = `fragments/${target}.html`
+    } else {
+      $rootScope.fragment = ''
+    }
+  }
+
+}])
+
+.controller('homeController', ['$scope', '$rootScope', ($scope, $rootScope) => {
   $scope.init = () => {
-    $scope.changePage('home');
+    $rootScope.changePage('home')
+    if ( $rootScope.isModalActive ) {
+      $rootScope.toggleModal()
+    }
+
   }
-
 }])
 
-.controller('homeController', ['$scope', ($scope) => {
-
+.controller('articleController', ['$scope', '$rootScope', ($scope, $rootScope) => {
+  $scope.init = () => {
+    $rootScope.changePage('article')
+    if ( $rootScope.isModalActive ) {
+      $rootScope.toggleModal()
+    }
+  }
 }])
 
-.controller('articleController', ['$scope', ($scope) => {
-
+.controller('chatController', ['$scope', '$rootScope', ($scope, $rootScope) => {
+  $scope.lala = 'lili'
 }])
 
-.controller('notifController', ['$scope', ($scope) => {
-  
+.controller('notifController', ['$scope', '$rootScope', ($scope, $rootScope) => {
+  $scope.init = () => {
+    $rootScope.changePage('notif')
+    if ( $rootScope.isModalActive ) {
+      $rootScope.toggleModal()
+    }
+  }
 }])
 
-.controller('profileController', ['$scope', ($scope) => {
-
+.controller('profileController', ['$scope', '$rootScope', ($scope, $rootScope) => {
+  $scope.init = () => {
+    $rootScope.changePage('profile')
+    if ( $rootScope.isModalActive ) {
+      $rootScope.toggleModal()
+    }
+  }
 }])
+
+.directive('modal', () => {
+  return {
+      restrict: 'A',
+      scope: {
+          fragment: '=ngModel'
+      },
+      template: `<div ng-include="fragment"></div>`
+  }
+})
 
 .run(function($ionicPlatform) {
   $ionicPlatform.ready(function() {
@@ -70,9 +117,19 @@ angular.module('vetways', ['ionic'])
       templateUrl: 'pages/notif.html',
       controller: 'notifController'
     })
-    .state('articles', {
-      url: '/articles',
-      templateUrl: 'pages/articles.html',
+    .state('articles-knowledge', {
+      url: '/articles-knowledge',
+      templateUrl: 'pages/articles-knowledge.html',
+      controller: 'articleController'
+    })
+    .state('articles-news', {
+      url: '/articles-news',
+      templateUrl: 'pages/articles-news.html',
+      controller: 'articleController'
+    })
+    .state('article-detail', {
+      url: '/article-detail',
+      templateUrl: 'pages/article-detail.html',
       controller: 'articleController'
     })
     .state('profile', {

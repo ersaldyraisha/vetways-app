@@ -6,44 +6,55 @@
     <title></title>
 
     <link rel="manifest" href="manifest.json">
+    <!-- <link href="css/ionic.app.css" rel="stylesheet"> -->
     <link href="css/main.css" rel="stylesheet">
     <script src="js/vendor/modernizr.min.js"></script>
 
   </head>
-  <body ng-app="vetways" ng-controller="mainController" ng-init="init()">
+  <body ng-app="vetways" ng-controller="mainController">
     
     <header class="action-bar">
       <img class="action-bar-logo" src="img/logo.png">
     </header>
 
     <main>
-      <ui-view></ui-view>   
+      <div class="page" ui-view></div>
     </main>
+
+    <div class="modal" ng-class="{'is-active': isModalActive}">
+      <div class="modal-header">
+        <button class="btn modal-dismiss" ng-click="toggleModal()">
+          <i class="fa fa-angle-left"></i>
+          <span>Kembali</span>
+        </button>
+      </div>
+      <div modal class="modal-content" ng-model="fragment"></div>
+    </div>
 
     <nav class="bottom-nav">
       <ul class="bottom-nav-list list-nostyle">
         <li class="bottom-nav-item" ng-class="{'is-active': pageIndicator.home}">
-          <a class="bottom-nav-anchor" ui-sref="home" ng-click="changePage('home')">
+          <a class="bottom-nav-anchor" ui-sref="home">
             <i class="fa fa-th fa-2x"></i>
-            <strong class="bottom-nav-title">Beranda</strong>
+            <span class="bottom-nav-title">Menu</span>
           </a>
         </li>
         <li class="bottom-nav-item" ng-class="{'is-active': pageIndicator.notif}">
-          <a class="bottom-nav-anchor" ui-sref="notif" ng-click="changePage('notif')">
+          <a class="bottom-nav-anchor" ui-sref="notif">
             <i class="fa fa-bell fa-2x"></i>
-            <strong class="bottom-nav-title">Pemberitahuan</strong>
+            <span class="bottom-nav-title">Pemberitahuan</span>
           </a>
         </li>
         <li class="bottom-nav-item" ng-class="{'is-active': pageIndicator.article}">
-          <a class="bottom-nav-anchor" ui-sref="articles" ng-click="changePage('article')">
+          <a class="bottom-nav-anchor" ui-sref="articles-knowledge">
             <i class="fa fa-newspaper-o fa-2x"></i>
-            <strong class="bottom-nav-title">Artikel</strong>
+            <span class="bottom-nav-title">Artikel</span>
           </a>
         </li>
         <li class="bottom-nav-item" ng-class="{'is-active': pageIndicator.profile}">
-          <a class="bottom-nav-anchor" ui-sref="profile" ng-click="changePage('profile')">
+          <a class="bottom-nav-anchor" ui-sref="profile">
             <i class="fa fa-user fa-2x"></i>
-            <strong class="bottom-nav-title">Profil</strong>
+            <span class="bottom-nav-title">Profil</span>
           </a>
         </li>
       </ul>

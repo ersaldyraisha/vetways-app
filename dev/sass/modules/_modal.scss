@@ -1,0 +1,31 @@
+.modal {
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: 10;
+  width: 96%;
+  height: 87%;
+  background: $white;
+  padding: $space;
+  transform: translate(2%, 100vh);
+  transition: all .3s ease;
+  border-radius: $space / 3;
+  will-change: true;
+  
+  &.is-active {
+    transform: translate(2%, 2%);
+  }
+}
+
+.modal-header {
+  border-bottom: solid 1px #f0f0f0;
+  padding-bottom: $space / 2;
+  margin-bottom: $space / 2;
+}
+
+.modal-dismiss {
+  background: transparent;
+  padding: 0;
+  color: $color_main;
+  font-weight: 700;
+}

@@ -5,6 +5,7 @@
   z-index: 10;
   width: 100%;
   background: $white;
+  box-shadow: 0px -3px 10px -3px rgba(0,0,0,0.1);
 }
 
 .bottom-nav-list {
@@ -19,6 +20,7 @@
   &.is-active {
     .bottom-nav-anchor {
       color: $color_main;
+      font-weight: 700;
 
       &:hover,
       &:focus {
@@ -46,7 +48,7 @@
 
 .bottom-nav-title {
   display: block;
-  font-size: $base_font_size * 0.9;
-  line-height: $base_font_size * 0.9;
+  font-size: $base_font_size * 0.8;
+  line-height: $base_font_size * 0.8;
   margin-bottom: 0;
 }

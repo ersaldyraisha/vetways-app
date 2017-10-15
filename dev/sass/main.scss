@@ -30,7 +30,8 @@ html {
 }
 
 body {
-    color: $black90;
+    color: $black;
+    background: #eee;
 }
 
 a {
@@ -54,10 +55,19 @@ a {
 }
 
 main {
-    min-height: 100vh;
-    background: #eee;
+    display: block;
+    height: 80vh;
     padding: 0 ($space / 2);
-    padding-top: $actionbar_height;
+    margin-top: $actionbar_height;
+    overflow-y: scroll;
+}
+
+.box {
+    position: relative;
+    z-index: 1;
+    background: $white;
+    border-radius: $space / 3;
+    padding: ($space / 2) $space;
 }
 
 // 3 Header

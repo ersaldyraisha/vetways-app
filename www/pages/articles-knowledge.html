@@ -1,0 +1,34 @@
+<div ng-init="init()">
+  <nav class="tab tab--fixed block">
+    <ul class="tab-list list-nostyle">
+      <li class="tab-item is-active">
+        <a class="tab-anchor" ui-sref="articles-knowledge">Pusat Pengetahuan</a>
+      </li>
+      <li class="tab-item">
+        <a class="tab-anchor" ui-sref="articles-news">Berita Vetways</a>
+      </li>
+    </ul>
+  </nav>
+  <div class="tab-helper"></div>
+  <ul class="card-slider list-nostyle list-inline block-low">
+      <li class="card-slider-item" ng-repeat="listItem in [1,2,3,4]">
+        <a class="card-slider-anchor">
+          <img class="card-slider-img" src="img/headline-img.jpg">
+          <p class="card-slider-title">Canine Influenza Virus 2017: Beyond Two Show Dogs</p>
+        </a>
+      </li>
+    </ul>
+  <ul class="card-list list-nostyle block-super">
+    <li class="card-list-item" ng-repeat="listItem in [1,2,3,4]">
+      <a class="card-list-anchor" ui-sref="article-detail">
+        <div class="card-list-info">
+          <p class="card-list-title">Lorem ipsum dolor, sit amet consectetur adipisicing elit. Voluptatum maiores tempora eligendi</p>
+          <p class="card-list-date">20 Oktober 2017</p>
+        </div>
+      </a>
+    </li>
+  </ul>
+  <button class="btn btn--float">
+    <i class="fa fa-refresh fa-2x"></i>
+  </button>
+</div>

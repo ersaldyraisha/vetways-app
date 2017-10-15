@@ -1,1 +1,21 @@
-notif
+<div ng-init="init()">
+  <div class="headline-helper headline-helper--small"></div>
+  <ul class="card-list list-nostyle block-super">
+    <li class="card-list-item" ng-repeat="listItem in [1,2,3,4]">
+      <div class="card-list-anchor">
+        <div class="card-list-info">
+          <p class="card-list-title">Kamu belum mengisi data unggasmu pada tanggal 20 Oktober 2017</p>
+          <p class="card-list-date">20 Oktober 2017</p>
+        </div>
+        <div class="card-list-btngroup">
+          <button class="btn btn--dismiss">
+            <i class="fa fa-close"></i>
+          </button>
+        </div>
+      </div>
+    </li>
+  </ul>
+  <button class="btn btn--float">
+    <i class="fa fa-refresh fa-2x"></i>
+  </button>
+</div>

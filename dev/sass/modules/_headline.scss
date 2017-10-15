@@ -1,7 +1,7 @@
 .headline {
   position: relative;
   z-index: 1;
-  margin-bottom: $space;
+  margin-bottom: $space / 2;
 }
 
 .headline-helper {
@@ -14,10 +14,19 @@
   background: $color_main;
 }
 
+.headline-helper--small {
+  height: 100px;
+}
+
+.headline-helper--medium {
+  height: 120px;
+}
+
 .headline-item {
   position: relative;
   padding: $space / 2;
   height: $space * 8;
+  background: $black;
   overflow: hidden;
   border-radius: $space / 3;
 }
@@ -39,6 +48,7 @@
   width: 100%;
   height: 100%;
   object-fit: cover;
+  opacity: 0.7;
 }
 
 .headline-title {

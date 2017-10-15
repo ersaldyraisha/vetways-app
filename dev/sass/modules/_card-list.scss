@@ -1,0 +1,32 @@
+.card-list {
+  position: relative;
+  z-index: 1;
+}
+
+.card-list-item {
+  width: 100%;
+  margin-bottom: $space / 3;
+}
+
+.card-list-anchor {
+  display: flex;
+  justify-content: space-between;
+  background: $white;
+  padding: $space / 1.5;
+  border-radius: $space / 3;
+  color: $black;
+
+  &:hover,
+  &:focus {
+    color: $black;
+  }
+}
+
+.card-list-title {
+  margin-bottom: $space / 4;
+}
+
+.card-list-date {
+  font-size: $base_font_size * 0.9;
+  margin-bottom: 0;
+}

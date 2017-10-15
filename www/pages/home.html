@@ -1,49 +1,54 @@
-<div class="headline-helper"></div>
-<ul class="headline list-nostyle">
-  <li class="headline-item">
-    <a class="headline-anchor" href="#!">
-      <p class="headline-tag"><small>Headline Vetways</small></p>
-      <img class="headline-img" src="img/headline-img.jpg">
-      <p class="headline-title">Canine Influenza Virus 2017: Beyond Two Show Dogs...</p>
-    </a>
-  </li>
-</ul>
+<div ng-init="init()">
 
-<ul class="card-grid list-nostyle">
-  <li class="card-grid-item">
-    <a class="card-grid-anchor" href="#!">
-      <img class="card-grid-img" src="img/card-grid-icon-1.png" alt="grid-item-1">
-      <p class="card-grid-title">Pertolongan Pertama</p>
-    </a>
-  </li>
-  <li class="card-grid-item">
-    <a class="card-grid-anchor" href="#!">
-      <img class="card-grid-img" src="img/card-grid-icon-2.png" alt="grid-item-1">
-      <p class="card-grid-title">Unggas Saya</p>
-    </a>
-  </li>
-  <li class="card-grid-item">
-    <a class="card-grid-anchor" href="#!">
-      <img class="card-grid-img" src="img/card-grid-icon-3.png" alt="grid-item-1">
-      <p class="card-grid-title">Cari Dokter</p>
-    </a>
-  </li>
-  <li class="card-grid-item">
-    <a class="card-grid-anchor" href="#!">
-      <img class="card-grid-img" src="img/card-grid-icon-4.png" alt="grid-item-1">
-      <p class="card-grid-title">Info Harga</p>
-    </a>
-  </li>
-  <li class="card-grid-item">
-    <a class="card-grid-anchor" href="#!">
-      <img class="card-grid-img" src="img/card-grid-icon-5.png" alt="grid-item-1">
-      <p class="card-grid-title">Toko</p>
-    </a>
-  </li>
-  <li class="card-grid-item">
-    <a class="card-grid-anchor" href="#!">
-      <img class="card-grid-img" src="img/card-grid-icon-6.png" alt="grid-item-1">
-      <p class="card-grid-title">Layanan Pelanggan</p>
-    </a>
-  </li>
-</ul>
+  <div class="headline-helper"></div>
+  
+  <ul class="headline list-nostyle">
+    <li class="headline-item">
+      <a class="headline-anchor" ui-sref="article-detail">
+        <p class="headline-tag"><small>Headline Vetways</small></p>
+        <img class="headline-img" src="img/headline-img.jpg">
+        <p class="headline-title">Canine Influenza Virus 2017: Beyond Two Show Dogs...</p>
+      </a>
+    </li>
+  </ul>
+
+  <ul class="card-grid list-nostyle">
+    <li class="card-grid-item">
+      <a class="card-grid-anchor" ng-click="toggleModal('first-aid')" ng-click="toggleModal()">
+        <img class="card-grid-img" src="img/card-grid-icon-1.png" alt="grid-item-1">
+        <p class="card-grid-title">Pertolongan Pertama</p>
+      </a>
+    </li>
+    <li class="card-grid-item">
+      <a class="card-grid-anchor" ng-click="toggleModal('unggas-saya')">
+        <img class="card-grid-img" src="img/card-grid-icon-2.png" alt="grid-item-1">
+        <p class="card-grid-title">Unggas Saya</p>
+      </a>
+    </li>
+    <li class="card-grid-item">
+      <a class="card-grid-anchor" ng-click="toggleModal('cari-dokter')">
+        <img class="card-grid-img" src="img/card-grid-icon-3.png" alt="grid-item-1">
+        <p class="card-grid-title">Cari Dokter</p>
+      </a>
+    </li>
+    <li class="card-grid-item">
+      <a class="card-grid-anchor" ng-click="toggleModal('info-harga')">
+        <img class="card-grid-img" src="img/card-grid-icon-4.png" alt="grid-item-1">
+        <p class="card-grid-title">Info Harga</p>
+      </a>
+    </li>
+    <li class="card-grid-item">
+      <a class="card-grid-anchor" ng-click="toggleModal('toko')">
+        <img class="card-grid-img" src="img/card-grid-icon-5.png" alt="grid-item-1">
+        <p class="card-grid-title">Toko</p>
+      </a>
+    </li>
+    <li class="card-grid-item">
+      <a class="card-grid-anchor" ng-click="toggleModal('layanan')">
+        <img class="card-grid-img" src="img/card-grid-icon-6.png" alt="grid-item-1">
+        <p class="card-grid-title">Layanan Pelanggan</p>
+      </a>
+    </li>
+  </ul>
+
+</div>

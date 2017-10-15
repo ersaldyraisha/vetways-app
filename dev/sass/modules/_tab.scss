@@ -1,0 +1,45 @@
+.tab {
+  background: $color_main;
+}
+
+.tab--fixed {
+  position: fixed;
+  top: $actionbar_height;
+  left: 0;
+  width: 100%;
+  z-index: 10;
+}
+
+.tab-list {
+  display: flex;
+  justify-content: space-evenly;
+}
+
+.tab-item {
+  width: 100%;
+
+  &.is-active {
+    .tab-anchor {
+      background: $color_dark;
+    }
+  }
+}
+
+.tab-anchor {
+  display: block;
+  padding: ($space / 4) 0;
+  margin: ($space / 4) ($space / 2);
+  color: $white;
+  text-align: center;
+  border-radius: 100px;
+  -webkit-tap-highlight-color: transparent;
+  
+  &:hover,
+  &:focus {
+    color: $white;
+  }
+}
+
+.tab-helper {
+  height: $space * 2.5;
+}

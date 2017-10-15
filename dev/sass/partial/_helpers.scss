@@ -75,3 +75,15 @@
 .invisible {
     visibility: hidden;
 }
+
+.block {
+    margin-bottom: $space;
+}
+
+.block-super {
+    margin-bottom: $space * 4.5;
+}
+
+.block-low {
+    margin-bottom: $space / 2;
+}
