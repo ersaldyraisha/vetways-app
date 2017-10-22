@@ -9,6 +9,7 @@ angular.module('vetways', ['ionic'])
 .controller('mainController', ['$scope', '$rootScope', ($scope, $rootScope) => {
   $rootScope.pageIndicator = {}
   $rootScope.fragment = ''
+  $rootScope.modalTitle = ''
   $rootScope.isModalActive = false
 
   $rootScope.changePage = (next) => {
@@ -25,12 +26,14 @@ angular.module('vetways', ['ionic'])
     document.querySelector('main').scrollTo(0,0)
   }
 
-  $rootScope.toggleModal = (target) => {
+  $rootScope.toggleModal = (target, title) => {
     $rootScope.isModalActive = !$rootScope.isModalActive
     if ( $rootScope.isModalActive ) {
       $rootScope.fragment = `fragments/${target}.html`
+      $rootScope.modalTitle = title
     } else {
       $rootScope.fragment = ''
+      $rootScope.modalTitle = ''
     }
   }
 

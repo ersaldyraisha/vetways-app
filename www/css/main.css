@@ -437,6 +437,10 @@ a {
   margin-bottom: 0.8em;
 }
 
+.block-none {
+  margin-bottom: 0;
+}
+
 @media print {
   * {
     background: transparent !important;
@@ -1707,36 +1711,109 @@ input[type="number"] {
   top: 0;
   left: 0;
   z-index: 10;
-  width: 96%;
-  height: 87%;
+  width: 100%;
+  height: 100%;
   background: #fff;
-  padding: 1.6em;
-  -webkit-transform: translate(2%, 100vh);
-      -ms-transform: translate(2%, 100vh);
-          transform: translate(2%, 100vh);
+  -webkit-transform: translateX(100vh);
+      -ms-transform: translateX(100vh);
+          transform: translateX(100vh);
   -webkit-transition: all .3s ease;
   transition: all .3s ease;
-  border-radius: 0.53333em;
   will-change: true;
 }
 
 .modal.is-active {
-  -webkit-transform: translate(2%, 2%);
-      -ms-transform: translate(2%, 2%);
-          transform: translate(2%, 2%);
+  -webkit-transform: translateX(0);
+      -ms-transform: translateX(0);
+          transform: translateX(0);
 }
 
 .modal-header {
+  background: #CBA26C;
   border-bottom: solid 1px #f0f0f0;
-  padding-bottom: 0.8em;
-  margin-bottom: 0.8em;
+  padding: 1.6em;
+  max-height: 5.6em;
 }
 
 .modal-dismiss {
+  position: absolute;
   background: transparent;
   padding: 0;
-  color: #CBA26C;
+  color: #fff;
   font-weight: 700;
+  font-size: 26px;
+  line-height: 1;
+}
+
+.modal-title {
+  margin-bottom: 0;
+  width: 100%;
+  color: #fff;
+  font-weight: 300;
+  text-align: center;
+}
+
+.list {
+  width: 100%;
+}
+
+.list-item {
+  width: 100%;
+  border-bottom: solid 1px #F0F0F0;
+}
+
+.list-anchor {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  color: #222;
+  padding: 0.8em 1.6em;
+}
+
+.list-anchor:hover, .list-anchor:focus {
+  color: #222;
+}
+
+.list-thumb {
+  width: 50px;
+  height: 50px;
+  background: grey;
+  margin-right: 1.6em;
+  border-radius: 100px;
+  overflow: hidden;
+}
+
+.list-content {
+  -webkit-align-self: center;
+      -ms-flex-item-align: center;
+              -ms-grid-row-align: center;
+          align-self: center;
+  width: 130px;
+  max-height: 50px;
+  margin-right: 0.8em;
+}
+
+@media screen and (min-width: 361px) {
+  .list-content {
+    width: 190px;
+  }
+}
+
+.list-action {
+  width: 100px;
+  height: 50px;
+  text-align: right;
+}
+
+.list-action .btn {
+  height: 100%;
+}
+
+.list-action-chat {
+  background: transparent;
+  padding: 0 0.53333em;
+  text-align: center;
 }
 
 /*!

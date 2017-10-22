@@ -1,0 +1,56 @@
+.list {
+  width: 100%;
+}
+
+.list-item {
+  width: 100%;
+  border-bottom: solid 1px $color_grey;
+}
+
+.list-anchor {
+  display: flex;
+  color: $black;
+  padding: ($space / 2) ($space);
+
+  &:hover,
+  &:focus {
+    color: $black;
+  }
+}
+
+.list-thumb {
+  width: 50px;
+  height: 50px;
+  background: grey;
+  margin-right: $space;
+  border-radius: 100px;
+  overflow: hidden;
+}
+
+.list-content {
+  align-self: center;
+  width: 130px;
+  max-height: 50px;
+  margin-right: $space / 2;
+  
+  @media #{$large_mobile} {
+    width: 190px;
+  }
+}
+
+.list-action {
+  width: 100px;
+  height: 50px;
+  text-align: right;
+
+  & .btn {
+    height: 100%;
+  }
+}
+
+.list-action-chat {
+  background: transparent;
+  padding: 0 ($space / 3);
+  text-align: center;
+  //min-width: 40%;
+}

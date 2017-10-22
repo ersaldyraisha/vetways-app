@@ -21,12 +21,12 @@
       <div class="page" ui-view></div>
     </main>
 
-    <div class="modal" ng-class="{'is-active': isModalActive}">
+    <div class="modal clearfix" ng-class="{'is-active': isModalActive}">
       <div class="modal-header">
         <button class="btn modal-dismiss" ng-click="toggleModal()">
           <i class="fa fa-angle-left"></i>
-          <span>Kembali</span>
         </button>
+        <h3 class="modal-title" ng-bind="modalTitle"></h3>
       </div>
       <div modal class="modal-content" ng-model="fragment"></div>
     </div>

@@ -1,4 +1,17 @@
 <div ng-controller="chatController">
-  <h3>First Aid</h3>
-  {{lala}}
+  <ul class="list list-nostyle">
+    <li class="list-item" ng-repeat="doctor in [1,2,3,4,5]">
+      <a class="list-anchor">
+        <div class="list-thumb"></div>
+        <div class="list-content">
+          <p class="block-none">Drh. Joko Siswanto</p>
+          <p class="block-none">RS Suka Maju</p>
+        </div>
+        <div class="list-action">
+          <button class="btn list-action-chat">Chat</button>
+          <button class="btn list-action-chat">Call</button>
+        </div>
+      </a>
+    </li>
+  </ul>
 </div>

@@ -36,6 +36,7 @@
 }
 
 
+
 // Visual helper
 // ------------------------------------------------------------------------ //
 
@@ -60,7 +61,7 @@
     padding: 0;
     position: absolute;
     width: 1px;
-
+    
     &.focusable:active,
     &.focusable:focus {
         clip: auto;
@@ -86,4 +87,8 @@
 
 .block-low {
     margin-bottom: $space / 2;
+}
+
+.block-none {
+    margin-bottom: 0;
 }
